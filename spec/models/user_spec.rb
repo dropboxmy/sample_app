@@ -10,6 +10,7 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }        # remembers the session until user signs out
   it { should respond_to(:authenticate) }
 
   it { should be_valid }
@@ -84,4 +85,8 @@ describe User do
     end
   end
 
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end
 end

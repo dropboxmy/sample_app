@@ -4,8 +4,10 @@
     <section>
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        - <%= @user.name %>
       </h1>
+      <p>Welcome.</p>
+      <p>Your remember_token is <%= @user.remember_token %></p>
     </section>
   </aside>
 </div>
